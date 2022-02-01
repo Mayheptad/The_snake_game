@@ -30,6 +30,13 @@ class Snake:
         self.turtle_pos_cor.append((x_axis, y_axis))
         self.add_segment(self.turtle_pos_cor[- 1])
 
+    def reset_snake(self):
+        for snk in self.turtle_arr:
+            snk.goto(2000, 2000)
+        self.turtle_arr.clear()
+        self.move_turtle_2_cor_arr()
+        self.head = self.turtle_arr[0]
+
     def up(self):
         if self.head.heading() != headings_map['down']:
             self.head.setheading(headings_map['up'])
